@@ -1,0 +1,3 @@
+[console_scripts]
+ashes = ashes.cli:main
+ashes-installer = launch_installer:main

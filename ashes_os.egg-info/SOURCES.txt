@@ -1,0 +1,13 @@
+LICENSE
+README.md
+pyproject.toml
+ashes/__init__.py
+ashes/cli.py
+ashes/gui_installer.py
+ashes_os.egg-info/PKG-INFO
+ashes_os.egg-info/SOURCES.txt
+ashes_os.egg-info/dependency_links.txt
+ashes_os.egg-info/entry_points.txt
+ashes_os.egg-info/requires.txt
+ashes_os.egg-info/top_level.txt
+tests/test_cli.py

@@ -1,0 +1,21 @@
+[project]
+name = "ashes-os"
+version = "0.1.0"
+description = "A hypervisor-first mobile OS specification and CLI scaffold"
+requires-python = ">=3.10"
+dependencies = ["pyusb>=1.0.2"]
+
+[project.scripts]
+ashes = "ashes.cli:main"
+ashes-installer = "launch_installer:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ashes*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

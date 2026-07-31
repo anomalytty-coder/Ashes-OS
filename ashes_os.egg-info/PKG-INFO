@@ -1,0 +1,8 @@
+Metadata-Version: 2.4
+Name: ashes-os
+Version: 0.1.0
+Summary: A hypervisor-first mobile OS specification and CLI scaffold
+Requires-Python: >=3.10
+License-File: LICENSE
+Requires-Dist: pyusb>=1.0.2
+Dynamic: license-file

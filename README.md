@@ -356,3 +356,85 @@ Phase 7 — Polishing
     Battery optimization
 
     Security audits
+
+Getting started
+
+1. Create and activate a virtual environment:
+
+    python -m venv .venv
+    source .venv/bin/activate
+
+2. Install the package in editable mode:
+
+    python -m pip install -e .
+
+3. Create a sample box:
+
+    ashes box create banking
+
+4. List configured boxes:
+
+    ashes box list
+
+5. Run the automated tests:
+
+    pytest -q
+
+The CLI stores its state in ashes_state.json in the current working directory.
+
+Ashes Device setup paths
+
+There are two intended onboarding routes for turning a regular phone into an Ashes Device:
+
+1. PC + USB-C workflow
+
+    - Connect a supported Pixel device to a PC with a USB-C cable.
+    - Use a host-side installer or flashing script to provision the Ashes hypervisor and control OS.
+    - Reboot into the Ashes boot flow and complete the Box setup wizard.
+    - This is the most flexible and developer-friendly path.
+
+2. Android app workflow
+
+    - Install an Android app on a supported device.
+    - The app guides the user through the transformation process, including privileged setup and boot configuration.
+    - This path is designed to make setup easier for everyday users who want a phone-first experience.
+    - On some devices, root or a compatible privileged environment may still be required.
+
+You can preview the intended plan from the CLI:
+
+    ashes device plan --mode pc
+    ashes device plan --mode app
+
+Cross-platform GUI installer
+
+A lightweight desktop installer is being scaffolded for Linux and Windows so that a user can connect a phone over USB-C, inspect compatibility, and receive a warning when the device is only partially supported.
+
+Ashes OS foundation
+
+The project now includes a first working OS-level scaffold:
+
+    ashes os boot
+    ashes box create devbox
+    ashes box start devbox
+    ashes box stop devbox
+
+This boots a basic Ashes environment and tracks boxes with a simple state model.
+
+Run the installer from GitHub with a single command:
+
+    python -m pip install -e git+https://github.com/anomalytty-coder/Ashes-OS.git#egg=ashes-os
+    ashes-installer
+
+Or from a local clone:
+
+    python -m pip install -e .
+    python launch_installer.py
+
+The GUI can also check compatibility from the CLI:
+
+    ashes installer check --device pixel-8
+    ashes installer check --device pixel-4a
+
+USB detection is available through the installer scan command:
+
+    ashes installer scan

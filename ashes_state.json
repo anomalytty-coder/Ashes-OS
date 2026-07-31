@@ -1,0 +1,17 @@
+{
+  "boxes": [
+    {
+      "name": "banking",
+      "template": "personal",
+      "os_type": "android",
+      "status": "stopped",
+      "permissions": {
+        "network": [
+          "internet"
+        ],
+        "hardware": [],
+        "storage": []
+      }
+    }
+  ]
+}
